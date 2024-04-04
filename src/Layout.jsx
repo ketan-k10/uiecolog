@@ -7,6 +7,8 @@ import WasteForm from './Components/Forminput/Forminput'
 import Dashboard from './Components/Dashboard/Dashboard'
 import WasteSolutionForm from './Components/Forminput/Forminput'
 import Home from './Components/Home/Home'
+import Test from './Components/Test/Test'
+import Forminput from './Components/Forminput/Forminput'
 
 function Layout() {
   return (
@@ -14,6 +16,8 @@ function Layout() {
     {/* <WasteForm /> */}
     {/* <WasteSolutionForm /> */}
     {/* <Dashboard /> */}
+    {/* <Test /> */}
+    {/* <Forminput /> */}
     <Header />
     {/* <Home /> */}
     

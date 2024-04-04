@@ -1,12 +1,11 @@
-import React from 'react'
-import { ArrowRight } from 'lucide-react'
-import { Link, NavLink } from 'react-router-dom'
-import { useState } from 'react';
-export default function SignUp() {
+import React, { useState } from 'react';
+import { ArrowRight } from 'lucide-react';
+import { Link, NavLink } from 'react-router-dom';
 
-  const [asUser, setForUser] = useState(false);
-  const [asOrganization, setForOrganization] = useState(false);
-
+export default function Test() {
+  // State variables for checkboxes
+  const [forHome, setForHome] = useState(false);
+  const [forBusiness, setForBusiness] = useState(false);
 
   return (
     <section>
@@ -23,9 +22,7 @@ export default function SignUp() {
           <div className="relative">
             <div className="w-full max-w-xl xl:mx-auto xl:w-full xl:max-w-xl xl:pr-24">
               <h3 className="text-4xl font-bold text-white">
-              Welcome to Eco-Log!
-Empowering Sustainable Solutions
-for Waste Management & Recycling
+                Welcome to Eco-Log! Empowering Sustainable Solutions for Waste Management & Recycling
               </h3>
               <ul className="mt-10 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
                 <li className="flex items-center space-x-3">
@@ -60,7 +57,7 @@ for Waste Management & Recycling
                       ></path>
                     </svg>
                   </div>
-                  <span className="text-lg font-medium text-white">  Waste management </span>
+                  <span className="text-lg font-medium text-white"> Waste management </span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-500">
@@ -77,7 +74,7 @@ for Waste Management & Recycling
                       ></path>
                     </svg>
                   </div>
-                  <span className="text-lg font-medium text-white"> Sustainable solutions  </span>
+                  <span className="text-lg font-medium text-white"> Sustainable solutions </span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-500">
@@ -94,7 +91,7 @@ for Waste Management & Recycling
                       ></path>
                     </svg>
                   </div>
-                  <span className="text-lg font-medium text-white">Events and Initiatives </span>
+                  <span className="text-lg font-medium text-white"> Events and Initiatives </span>
                 </li>
               </ul>
             </div>
@@ -105,100 +102,51 @@ for Waste Management & Recycling
             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Sign up</h2>
             <p className="mt-2 text-base text-gray-600">
               Already have an account?{' '}
-              <a
-                href="#"
-                title=""
-                className="font-medium text-black transition-all duration-200 hover:underline"
-              >
+              <a href="#" title="" className="font-medium text-black transition-all duration-200 hover:underline">
                 Login
               </a>
             </p>
             <form action="#" method="POST" className="mt-8">
               <div className="space-y-5">
-                <div>
-                  {/* Checkbox for For Your Home */}
+                {/* Checkbox for For Your Home */}
                 <div className="flex items-center space-x-2">
                   <input
                     type="checkbox"
-                    id="asUser"
-                    checked={asUser}
+                    id="forHome"
+                    checked={forHome}
                     onChange={(e) => {
-                      setForUser(e.target.checked);
-                      setForOrganization(false); // Uncheck business checkbox if home checkbox is checked
+                      setForHome(e.target.checked);
+                      
+                      setForBusiness(false); // Uncheck business checkbox if home checkbox is checked
                     }}
                   />
                   <label htmlFor="forHome" className="text-base font-medium text-gray-900">
-                    As a User
+                    For Your Home
                   </label>
                 </div>
                 {/* Checkbox for For Business & Organizations */}
                 <div className="flex items-center space-x-2">
                   <input
                     type="checkbox"
-                    id="asOrganization"
-                    checked={asOrganization}
+                    id="forBusiness"
+                    checked={forBusiness}
                     onChange={(e) => {
-                      setForOrganization(e.target.checked);
-                      setForUser(false); // Uncheck home checkbox if business checkbox is checked
+                      setForBusiness(e.target.checked);
+                      setForHome(false); // Uncheck home checkbox if business checkbox is checked
                     }}
                   />
                   <label htmlFor="forBusiness" className="text-base font-medium text-gray-900">
-                    As  Organization
+                    For Business & Organizations
                   </label>
                 </div>
-                </div>
                 <div>
-                  <label htmlFor="name" className="text-base font-medium text-gray-900">
-                    {' '}
-                    Username{' '}
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                      type="text"
-                      placeholder="Username"
-                      id="name"
-                    ></input>
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="email" className="text-base font-medium text-gray-900">
-                    {' '}
-                    Email address{' '}
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                      type="email"
-                      placeholder="Email"
-                      id="email"
-                    ></input>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex items-center justify-between">
-                    <label htmlFor="password" className="text-base font-medium text-gray-900">
-                      {' '}
-                      Password{' '}
-                    </label>
-                  </div>
-                  <div className="mt-2">
-                    <input
-                      className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                      type="password"
-                      placeholder="Password"
-                      id="password"
-                    ></input>
-                  </div>
-                </div>
-                <div >
-                  <NavLink to={"login"}>
-                  <button
-                    type="button"
-                    className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
-                  >
-                    Create Account <ArrowRight className="ml-2" size={16} />
-                  </button>
+                  <NavLink to={'login'}>
+                    <button
+                      type="button"
+                      className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
+                    >
+                      Create Account <ArrowRight className="ml-2" size={16} />
+                    </button>
                   </NavLink>
                 </div>
               </div>
@@ -241,5 +189,5 @@ for Waste Management & Recycling
         </div>
       </div>
     </section>
-  )
+  );
 }

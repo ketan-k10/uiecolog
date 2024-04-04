@@ -12,6 +12,8 @@ import Dashboard from './Components/Dashboard/Dashboard.jsx'
 import Marketplace from './Components/Marketplace/Marketplace.jsx'
 import Events from './Components/Events/Events.jsx'
 import Learnmore from './Components/Learnmore/Learnmore.jsx'
+import Applyjob from './Components/Applyjob/Applyjob.jsx'
+import Applysmartbin from './Components/Applysmartbin/Applysmartbin.jsx'
 
 const router = createBrowserRouter([
   {
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
     {
       path:"learnmore",
       element: <Learnmore />
+    },
+    {
+      path:"apply-for-job",
+      element: <Applyjob />
+    },
+    {
+      path:"apply-for-smart-bin",
+      element: <Applysmartbin />
     },
     ]
   }
